@@ -40,8 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Videos (do not commit)
+# Videos - keep out of git
+*.MOV
 *.mov
+*.MP4
 *.mp4
 *.m4v
 *.webm
