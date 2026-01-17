@@ -18,7 +18,7 @@ export const projects: Project[] = [
     location: "Sandhurst",
     category: "Extensions",
     summary: "Open-plan living space with a seamless finish and matching details.",
-    cover: "/projects/rear-extension-sandhurst/01.jpg",
+    cover: "/projects/rear-extension-sandhurst/IMG_3271.webp",
     images: [
       "/projects/IMG_3255.webp",
       "/projects/IMG_3256.webp",
