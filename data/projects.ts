@@ -20,14 +20,14 @@ export const projects: Project[] = [
     summary: "Open-plan living space with a seamless finish and matching details.",
     cover: "/projects/rear-extension-sandhurst/01.jpg",
     images: [
-      "/projects/IMG_3255.HEIC",
-      "/projects/IMG_3256.HEIC",
-      "/projects/IMG_3257.HEIC",
-      "/projects/IMG_3258.HEIC",
-      "/projects/IMG_3259.HEIC",
-      "/projects/IMG_3260.HEIC",
-      "/projects/IMG_3261.HEIC",
-      "/projects/IMG_3262.HEIC",
+      "/projects/IMG_3255.webp",
+      "/projects/IMG_3256.webp",
+      "/projects/IMG_3257.webp",
+      "/projects/IMG_3258.webp",
+      "/projects/IMG_3259.webp",
+      "/projects/IMG_3260.webp",
+      "/projects/IMG_3261.webp",
+      "/projects/IMG_3262.webp",
     ],
     videos: [
       // Later: put clips in /public/projects/... or use hosted URLs
