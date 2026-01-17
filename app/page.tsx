@@ -1,65 +1,160 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <div className="wrap hero">
+        <div className="hero-grid">
+          <div className="panel hero-left">
+            <div className="kicker">Established 1998 • Hampshire & Surrey • Local, reliable workmanship</div>
+            <h1>Building contractors for extensions, renovations and new-build homes.</h1>
+            <p className="lead">
+              Established in <strong>1998</strong>, based near <strong>Sandhurst</strong> and covering <strong>Crowthorne</strong>,{" "}
+              <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas. From home extensions to full new-builds,
+              we deliver clear quotes, tidy sites and a finish you’ll be proud of.
+            </p>
+            <div className="hero-actions">
+              <a className="btn primary" href="/#contact">Request a Quote</a>
+              <a className="btn" href="/projects">View Recent Work</a>
+            </div>
+
+            <div className="trustbar" role="list">
+              <div className="pill" role="listitem">Clear written quotes</div>
+              <div className="pill" role="listitem">Quality workmanship</div>
+              <div className="pill" role="listitem">Respectful, tidy site</div>
+              <div className="pill" role="listitem">Local Hampshire/Surrey</div>
+            </div>
+          </div>
+
+          <div className="panel hero-right" aria-label="Project photo">
+            <div className="img" />
+            <div className="badge">
+              <strong>Recent project</strong>
+              <span>Extension & external cladding finish (gallery in Projects)</span>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      <section id="services">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Services</h2>
+              <p className="sub">From planning support to completion, we deliver a smooth build with clear communication.</p>
+            </div>
+            <a className="btn" href="/#services">All services</a>
+          </div>
+
+          <div className="grid-3">
+            <div className="card">
+              <span className="tag">Popular</span>
+              <h3>House Extensions</h3>
+              <p>Extra space, designed to suit your home, with careful attention to structure and finish.</p>
+            </div>
+            <div className="card">
+              <span className="tag">High impact</span>
+              <h3>Renovations & Refurbishments</h3>
+              <p>Modernising interiors, improving layouts, and upgrading finishes with minimal disruption.</p>
+            </div>
+            <div className="card">
+              <span className="tag">Specialist</span>
+              <h3>Brickwork, Roofing & Repairs</h3>
+              <p>Structural work, brickwork, roofing repairs and maintenance—done properly and built to last.</p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Featured projects</h2>
+              <p className="sub">A selection of recent work across Hampshire & Surrey.</p>
+            </div>
+            <a className="btn" href="/projects">See all projects</a>
+          </div>
+
+          <div className="grid-3">
+            <a className="card" href="/projects">
+              <div className="thumb" />
+              <h3>Rear extension</h3>
+              <p>Open-plan living space with matching brickwork and roofline details.</p>
+            </a>
+            <a className="card" href="/projects">
+              <div className="thumb" />
+              <h3>Renovation</h3>
+              <p>Internal refurbishment, finishes and practical layout improvements.</p>
+            </a>
+            <a className="card" href="/projects">
+              <div className="thumb" />
+              <h3>External works</h3>
+              <p>Cladding, repairs and exterior upgrades with a clean, durable finish.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div className="wrap split">
+          <div className="card">
+            <h2>How we work</h2>
+            <p className="sub">A straightforward process so you always know what’s happening and what’s next.</p>
+            <div className="steps" style={{ marginTop: 14 }}>
+              {[
+                ["1", "Enquiry", "Tell us about your project and preferred timescales."],
+                ["2", "Site visit", "We discuss options and practical considerations."],
+                ["3", "Quote", "Clear written quote with scope and assumptions."],
+                ["4", "Build", "Tidy, respectful workmanship with regular updates."],
+                ["5", "Handover", "Final walkthrough and finish checks."],
+              ].map(([n, title, desc]) => (
+                <div className="step" key={n}>
+                  <div className="num">{n}</div>
+                  <div>
+                    <strong>{title}</strong>
+                    <br />
+                    <span className="sub">{desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card">
+            <h2>Areas we cover</h2>
+            <p className="sub">
+              We serve <strong>Hampshire</strong> and <strong>Surrey</strong>, including:
+            </p>
+            <ul style={{ color: "var(--muted)", margin: "12px 0 0", paddingLeft: 18 }}>
+              <li>Sandhurst</li>
+              <li>Crowthorne</li>
+              <li>Camberley</li>
+              <li>Farnborough</li>
+              <li>Surrounding towns and villages</li>
+            </ul>
+            <div style={{ marginTop: 16, display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a className="btn primary" href="/#contact">Get a Quote</a>
+              <a className="btn" href="/projects">View Projects</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div className="wrap">
+          <div className="card">
+            <h2 style={{ fontSize: 22 }}>Request a Quote</h2>
+            <p className="sub">Serving Hampshire & Surrey — including Sandhurst, Crowthorne, Camberley and Farnborough.</p>
+            <p className="sub" style={{ marginTop: 8 }}>
+              For now, contact us by phone. We can wire the form up once you choose a provider.
+            </p>
+
+            <div style={{ marginTop: 14, display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a className="btn primary" href="tel:01252510109">Call 01252 510109</a>
+              <a className="btn" href="tel:07712590713">Mobile 07712 590713</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
