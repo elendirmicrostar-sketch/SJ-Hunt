@@ -61,4 +61,4 @@ foreach($it in $items){
   $copied++
 }
 
-Write-Host ("✓ Copied {0} files into {1} projects at {2}" -f $copied, $proj, $OutDir)
+Write-Host ("OK: Copied {0} files into {1} projects at {2}" -f $copied, $proj, $OutDir)

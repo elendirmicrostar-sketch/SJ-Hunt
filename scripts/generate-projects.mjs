@@ -77,4 +77,5 @@ export const projects: Project[] = ${JSON.stringify(projects, null, 2)} as const
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, content, "utf8");
 
-console.log(\`✅ Wrote ${projects.length} projects to data/projects.ts\`);
+console.log(`Wrote ${projects.length} projects to data/projects.ts`);
+
