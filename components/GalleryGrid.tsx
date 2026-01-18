@@ -3,17 +3,18 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import ProjectCard from "./ProjectCard";
-import type { Category, Project } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
-const cats: (Category | "All")[] = ["All", "Extensions", "Renovations", "New Builds"];
+type CatLabel = "Extensions" | "Renovations" | "New Builds";
+const cats: ("All" | CatLabel)[] = ["All", "Extensions", "Renovations", "New Builds"];
 
 export default function GalleryGrid({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState<(typeof cats)[number]>("All");
 
-  const filtered = useMemo(() => {
-    if (active === "All") return projects;
-    return projects.filter((p) => p.category === active);
-  }, [active, projects]);
+const filtered =
+  active === "All"
+    ? projects
+    : projects.filter((p) => p.categoryLabel === active);
 
   return (
     <>
