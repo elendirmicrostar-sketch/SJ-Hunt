@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main>
@@ -25,10 +28,20 @@ export default function Home() {
           </div>
 
           <div className="panel hero-right" aria-label="Project photo">
-            <div className="img" />
+            
+            <div className="heroPhoto">
+  <Image
+    src="/projects/renovations/project-13/cover.webp"
+    alt="Recent renovation project"
+    fill
+    priority
+    className="heroPhotoImg"
+    sizes="(max-width: 900px) 100vw, 45vw"
+  />
+</div>
+
             <div className="badge">
               <strong>Recent project</strong>
-              <span>Extension & external cladding finish (gallery in Projects)</span>
             </div>
           </div>
         </div>
@@ -41,7 +54,7 @@ export default function Home() {
               <h2>Services</h2>
               <p className="sub">From planning support to completion, we deliver a smooth build with clear communication.</p>
             </div>
-            <a className="btn" href="/#services">All services</a>
+      
           </div>
 
           <div className="grid-3">
@@ -75,21 +88,53 @@ export default function Home() {
           </div>
 
           <div className="grid-3">
-            <a className="card" href="/projects">
-              <div className="thumb" />
-              <h3>Rear extension</h3>
-              <p>Open-plan living space with matching brickwork and roofline details.</p>
-            </a>
-            <a className="card" href="/projects">
-              <div className="thumb" />
-              <h3>Renovation</h3>
-              <p>Internal refurbishment, finishes and practical layout improvements.</p>
-            </a>
-            <a className="card" href="/projects">
-              <div className="thumb" />
-              <h3>External works</h3>
-              <p>Cladding, repairs and exterior upgrades with a clean, durable finish.</p>
-            </a>
+          
+              <Link className="card" href="/projects/extensions">
+  <div className="featThumb">
+    <Image
+      src="/projects/extensions/project-05/cover.webp"
+      alt="Renovation project"
+      fill
+      className="featThumbImg"
+      sizes="(max-width: 900px) 100vw, 33vw"
+    />
+  </div>
+  <h3>Extensions</h3>
+  <p></p>
+</Link>
+
+            
+              <Link className="card" href="/projects/renovations">
+  <div className="featThumb">
+    <Image
+      src="/projects/renovations/project-13/cover.webp"
+      alt="Renovation project"
+      fill
+      className="featThumbImg"
+      sizes="(max-width: 900px) 100vw, 33vw"
+    />
+  </div>
+  <h3>Renovation</h3>
+  <p></p>
+</Link>
+
+          
+          
+             <Link className="card" href="/projects/new-builds">
+  <div className="featThumb">
+    <Image
+      src="/projects/new-builds/project-01/cover.webp"
+      alt="New Build Project"
+      fill
+      className="featThumbImg"
+      sizes="(max-width: 900px) 100vw, 33vw"
+    />
+  </div>
+  <h3>New Build Projects</h3>
+  <p></p>
+</Link>
+
+          
           </div>
         </div>
       </section>
@@ -131,11 +176,7 @@ export default function Home() {
               <li>Farnborough</li>
               <li>Surrounding towns and villages</li>
             </ul>
-            <div style={{ marginTop: 16, display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a className="btn primary" href="/#contact">Get a Quote</a>
-              <a className="btn" href="/projects">View Projects</a>
-            </div>
-          </div>
+                      </div>
         </div>
       </section>
 
@@ -144,9 +185,6 @@ export default function Home() {
           <div className="card">
             <h2 style={{ fontSize: 22 }}>Request a Quote</h2>
             <p className="sub">Serving Hampshire & Surrey — including Sandhurst, Crowthorne, Camberley and Farnborough.</p>
-            <p className="sub" style={{ marginTop: 8 }}>
-              For now, contact us by phone. We can wire the form up once you choose a provider.
-            </p>
 
             <div style={{ marginTop: 14, display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a className="btn primary" href="tel:01252510109">Call 01252 510109</a>
