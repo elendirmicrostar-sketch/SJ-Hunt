@@ -1,29 +1,63 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
-import GalleryGrid from "@/components/GalleryGrid";
 
-export default function ProjectsPage() {
+function heroFor(category: "extensions" | "renovations" | "new-builds") {
+  const first = projects.find((p) => p.category === category);
+  return first?.cover ?? "/brand/logo.png"; // fallback
+}
+
+const categories = [
+  {
+    key: "extensions" as const,
+    title: "Extensions",
+    desc: "Single and multi-storey extensions built to match your home.",
+    href: "/projects/extensions",
+  },
+  {
+    key: "renovations" as const,
+    title: "Renovations",
+    desc: "Refurbishments, reconfigurations and finish upgrades.",
+    href: "/projects/renovations",
+  },
+  {
+    key: "new-builds" as const,
+    title: "New Builds",
+    desc: "From groundworks to completion — new homes built properly.",
+    href: "/projects/new-builds",
+  },
+];
+
+export default function ProjectsLandingPage() {
   return (
-    <main style={{ padding: "28px 0 48px" }}>
-      <div className="wrap">
-        <h1 className="h1">Projects</h1>
-        <p className="lead">
-          Extensions, renovations and new builds across Hampshire & Surrey.
-        </p>
+    <main className="wrap pagePad">
+      <header className="pageHead">
+        <h1>Projects</h1>
+        <p>Browse work by category: extensions, renovations and new builds.</p>
+      </header>
 
-        {/* If you already have GalleryGrid built, use it */}
-        <GalleryGrid projects={projects} />
+      <section className="catGrid">
+        {categories.map((c) => (
+          <Link key={c.key} href={c.href} className="catCard">
+            <div className="catHeroReal">
+              <Image
+                src={heroFor(c.key)}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="catHeroImg"
+                priority
+              />
+            </div>
 
-        {/* If GalleryGrid isn’t ready, comment the line above and use this simple list:
-        <div style={{ marginTop: 18, display: "grid", gap: 12 }}>
-          {projects.map((p) => (
-            <Link key={p.slug} href={`/projects/${p.slug}`}>
-              {p.title} — {p.location} ({p.category})
-            </Link>
-          ))}
-        </div>
-        */}
-      </div>
+            <div className="catBody">
+              <h2 className="catTitle">{c.title}</h2>
+              <p className="catDesc">{c.desc}</p>
+              <span className="catCta">View {c.title} →</span>
+            </div>
+          </Link>
+        ))}
+      </section>
     </main>
   );
 }

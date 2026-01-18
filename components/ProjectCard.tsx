@@ -1,24 +1,25 @@
+import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card">
-      <div className="thumb">
+   <Link href={`/projects/${project.slug}`} className="projectCard">
+      <div className="projectCover">
         <Image
           src={project.cover}
-          alt={`${project.title} in ${project.location}`}
+          alt={project.title}
           fill
-          sizes="(max-width: 920px) 100vw, 33vw"
-          style={{ objectFit: "cover" }}
-          priority={false}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="projectCoverImg"
         />
       </div>
 
-      <div className="tag">{project.category}</div>
-      <h3 className="h3">{project.title}</h3>
-      <p className="meta">{project.location}</p>
-      <p className="meta" style={{ marginTop: 6 }}>{project.summary}</p>
-    </article>
+      <div className="projectBody">
+        <div className="projectMeta">{project.categoryLabel}</div>
+        <h3 className="projectTitle">{project.title}</h3>
+        <div className="projectMeta">{project.location}</div>
+      </div>
+    </Link>
   );
 }
