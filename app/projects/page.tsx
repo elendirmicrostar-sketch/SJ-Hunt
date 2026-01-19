@@ -1,22 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
-import { categoryCover } from "@/lib/category-images";
+import { projects } from "@/data/projects";
 
-const categories = [
+export const dynamic = "force-static";
+
+type CategoryKey = "extensions" | "renovations" | "new-builds";
+
+function coverFor(category: CategoryKey) {
+  return projects.find((p) => p.category === category)?.cover ?? "/brand/logo.png";
+}
+
+const categories: { key: CategoryKey; title: string; desc: string; href: string }[] = [
   {
-    key: "extensions" as const,
+    key: "extensions",
     title: "Extensions",
     desc: "Single and multi-storey extensions built to match your home.",
     href: "/projects/extensions",
   },
   {
-    key: "renovations" as const,
+    key: "renovations",
     title: "Renovations",
     desc: "Refurbishments, reconfigurations and finish upgrades.",
     href: "/projects/renovations",
   },
   {
-    key: "new-builds" as const,
+    key: "new-builds",
     title: "New Builds",
     desc: "From groundworks to completion — new homes built properly.",
     href: "/projects/new-builds",
@@ -32,23 +40,23 @@ export default function ProjectsLandingPage() {
       </header>
 
       <section className="catGrid">
-        {categories.map((c) => (
-          <Link key={c.key} href={c.href} className="catCard">
+        {categories.map((cat) => (
+          <Link key={cat.key} href={cat.href} className="catCard">
             <div className="catHeroReal">
               <Image
-                src={categoryCover(c.key)}
+                src={coverFor(cat.key)}
                 alt=""
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 900px) 100vw, 33vw"
                 className="catHeroImg"
                 priority
               />
             </div>
 
             <div className="catBody">
-              <h2 className="catTitle">{c.title}</h2>
-              <p className="catDesc">{c.desc}</p>
-              <span className="catCta">View {c.title} →</span>
+              <h2 className="catTitle">{cat.title}</h2>
+              <p className="catDesc">{cat.desc}</p>
+              <span className="catCta">View {cat.title} →</span>
             </div>
           </Link>
         ))}

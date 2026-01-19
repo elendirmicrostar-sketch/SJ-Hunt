@@ -1,48 +1,37 @@
 import Link from "next/link";
 import Image from "next/image";
-import { categoryCover } from "@/lib/category-images";
+import { projects } from "@/data/projects";
 
-function heroForHome() {
-  // Pick ONE stable category image for the homepage hero.
-  // Change to "renovations" or "new-builds" if you prefer.
-  return categoryCover("extensions");
+export const dynamic = "force-static";
+
+type CategoryKey = "extensions" | "renovations" | "new-builds";
+
+function coverFor(category: CategoryKey) {
+  return projects.find((p) => p.category === category)?.cover ?? "/brand/logo.png";
 }
 
-const categories = [
-  {
-    key: "extensions" as const,
-    title: "Extensions",
-    desc: "Single and multi-storey extensions built to match your home.",
-    href: "/projects/extensions",
-  },
-  {
-    key: "renovations" as const,
-    title: "Renovations",
-    desc: "Refurbishments, reconfigurations and finish upgrades.",
-    href: "/projects/renovations",
-  },
-  {
-    key: "new-builds" as const,
-    title: "New Builds",
-    desc: "From groundworks to completion — new homes built properly.",
-    href: "/projects/new-builds",
-  },
-];
+function homeHeroImage() {
+  // Prefer an extensions cover for the homepage hero, fallback to anything, then logo
+  const ext = projects.find((p) => p.category === "extensions")?.cover;
+  const any = projects[0]?.cover;
+  return ext ?? any ?? "/brand/logo.png";
+}
 
 export default function Home() {
   return (
     <main>
       {/* HERO */}
-      <div className="wrap hero">
+      <section className="wrap hero">
         <div className="hero-grid">
           <div className="panel hero-left">
             <div className="kicker">Established 1998 • Hampshire & Surrey • Local, reliable workmanship</div>
+
             <h1>Building contractors for extensions, renovations and new-build homes.</h1>
 
             <p className="lead">
               Established in <strong>1998</strong>, based near <strong>Sandhurst</strong> and covering{" "}
-              <strong>Crowthorne</strong>, <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas. From
-              home extensions to full new-builds, we deliver clear quotes, tidy sites and a finish you’ll be proud of.
+              <strong>Crowthorne</strong>, <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas. From home
+              extensions to full new-builds, we deliver clear quotes, tidy sites and a finish you’ll be proud of.
             </p>
 
             <div className="hero-actions">
@@ -73,7 +62,7 @@ export default function Home() {
           <div className="panel hero-right" aria-label="Project photo">
             <div className="heroPhoto">
               <Image
-                src={heroForHome()}
+                src={homeHeroImage()}
                 alt="Recent project"
                 fill
                 priority
@@ -83,7 +72,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* FEATURED CATEGORIES */}
       <section>
@@ -93,47 +82,65 @@ export default function Home() {
               <h2>Featured projects</h2>
               <p className="sub">Browse by category.</p>
             </div>
+
             <Link className="btn" href="/projects">
               See all projects
             </Link>
           </div>
 
           <div className="grid-3">
-            {categories.map((c) => (
-              <Link key={c.key} className="card" href={c.href}>
-                <div className="featThumb">
-                  <Image
-                    src={categoryCover(c.key)}
-                    alt={`${c.title} projects`}
-                    fill
-                    className="featThumbImg"
-                    sizes="(max-width: 900px) 100vw, 33vw"
-                  />
-                </div>
-                <h3>{c.title}</h3>
-                <p>{c.desc}</p>
-              </Link>
-            ))}
+            <Link className="card" href="/projects/extensions">
+              <div className="featThumb">
+                <Image
+                  src={coverFor("extensions")}
+                  alt="Extensions projects"
+                  fill
+                  className="featThumbImg"
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+              </div>
+              <h3>Extensions</h3>
+              <p>Single and multi-storey extensions built to match your home.</p>
+            </Link>
+
+            <Link className="card" href="/projects/renovations">
+              <div className="featThumb">
+                <Image
+                  src={coverFor("renovations")}
+                  alt="Renovations projects"
+                  fill
+                  className="featThumbImg"
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+              </div>
+              <h3>Renovations</h3>
+              <p>Refurbishments, reconfigurations and finish upgrades.</p>
+            </Link>
+
+            <Link className="card" href="/projects/new-builds">
+              <div className="featThumb">
+                <Image
+                  src={coverFor("new-builds")}
+                  alt="New builds projects"
+                  fill
+                  className="featThumbImg"
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+              </div>
+              <h3>New Builds</h3>
+              <p>From groundworks to completion — new homes built properly.</p>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CONTACT (anchor for Request a Quote button) */}
+      {/* CONTACT ANCHOR (keeps your /#contact link working even if you build contact later) */}
       <section id="contact">
         <div className="wrap">
-          <div className="panel">
+          <div className="panel" style={{ padding: 24 }}>
             <h2>Request a quote</h2>
-            <p className="sub">Tell us about your project and we’ll get back to you.</p>
-
-            {/* Keep whatever contact form / details you already had.
-                This is just a placeholder block so the anchor works. */}
-            <div style={{ marginTop: 12 }}>
-              <p>
-                Email: <a href="mailto:hello@sjhunt.co.uk">hello@sjhunt.co.uk</a>
-                <br />
-                Phone: <a href="tel:+447000000000">+44 7000 000000</a>
-              </p>
-            </div>
+            <p className="sub">Call or email us and we’ll come back to you promptly.</p>
+            {/* You can replace this with your real contact form later */}
           </div>
         </div>
       </section>
