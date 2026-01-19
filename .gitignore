@@ -47,3 +47,7 @@ next-env.d.ts
 *.mp4
 *.m4v
 *.webm
+
+# image keep out of git
+/public/projects/*.HEIC
+/public/projects/*.webp
