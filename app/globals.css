@@ -953,3 +953,20 @@ header .navHeader{
 .thumbImgWrap{ position:relative; width:100%; aspect-ratio: 4 / 3; border-radius:16px; overflow:hidden; }
 .thumbImg{ object-fit: cover; }
 
+.catGalleryGrid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap:12px;
+}
+
+.catThumb{
+  position:relative;
+  width:100%;
+  aspect-ratio: 4 / 3;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.catThumbImg{
+  object-fit:cover;
+}
