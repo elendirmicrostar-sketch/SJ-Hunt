@@ -38,7 +38,7 @@ export default function Home() {
             
            <div className="heroPhoto">
   <Image
-    src={heroFor("extensions")}
+    src={heroFor("renovations")}
     alt="Recent project"
     fill
     priority
