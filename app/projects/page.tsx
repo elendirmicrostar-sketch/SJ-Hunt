@@ -12,21 +12,22 @@ const categories = [
     key: "extensions" as const,
     title: "Extensions",
     desc: "Single and multi-storey extensions built to match your home.",
-    href: "/projects/extensions",
+    href: "/projects?category=extensions",
   },
   {
     key: "renovations" as const,
     title: "Renovations",
     desc: "Refurbishments, reconfigurations and finish upgrades.",
-    href: "/projects/renovations",
+    href: "/projects?category=renovations",
   },
   {
     key: "new-builds" as const,
     title: "New Builds",
     desc: "From groundworks to completion — new homes built properly.",
-    href: "/projects/new-builds",
+    href: "/projects?category=new-builds",
   },
 ];
+
 
 export default function ProjectsLandingPage() {
   return (
