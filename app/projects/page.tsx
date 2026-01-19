@@ -12,19 +12,19 @@ const categories = [
     key: "extensions" as const,
     title: "Extensions",
     desc: "Single and multi-storey extensions built to match your home.",
-    href: "/projects?category=extensions",
+    href: "/projects/extensions",
   },
   {
     key: "renovations" as const,
     title: "Renovations",
     desc: "Refurbishments, reconfigurations and finish upgrades.",
-    href: "/projects?category=renovations",
+    href: "/projects/renovations",
   },
   {
     key: "new-builds" as const,
     title: "New Builds",
     desc: "From groundworks to completion — new homes built properly.",
-    href: "/projects?category=new-builds",
+    href: "/projects/new-builds",
   },
 ];
 
