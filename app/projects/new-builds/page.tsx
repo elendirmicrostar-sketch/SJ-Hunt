@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
-import GalleryGrid from "@/components/GalleryGrid";
+import GalleryGrid from "@/components/GalleryGrid"; 
 
 const CATEGORIES = ["extensions", "renovations", "new-builds"] as const;
 type Category = (typeof CATEGORIES)[number];
@@ -11,7 +11,7 @@ export function generateStaticParams() {
   return CATEGORIES.map((category) => ({ category }));
 }
 
-export default function new-buildsPage() {
+export default function NewBuildsPage() {
   const list = projects.filter((p) => p.category === "new-builds");
 
   return (
