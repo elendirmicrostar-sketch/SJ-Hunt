@@ -1,22 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-import { coverFor, type CategoryKey } from "@/data/category-covers";
+import { coverFor } from "@/data/category-covers";
 
-const categories: { key: CategoryKey; title: string; desc: string; href: string }[] = [
+const categories = [
   {
-    key: "extensions",
+    key: "extensions" as const,
     title: "Extensions",
     desc: "Single and multi-storey extensions built to match your home.",
     href: "/projects/extensions",
   },
   {
-    key: "renovations",
+    key: "renovations" as const,
     title: "Renovations",
     desc: "Refurbishments, reconfigurations and finish upgrades.",
     href: "/projects/renovations",
   },
   {
-    key: "new-builds",
+    key: "new-builds" as const,
     title: "New Builds",
     desc: "From groundworks to completion — new homes built properly.",
     href: "/projects/new-builds",
@@ -28,7 +28,7 @@ export default function ProjectsLandingPage() {
     <main className="wrap pagePad">
       <header className="pageHead">
         <h1>Projects</h1>
-        <p>Browse work by category.</p>
+        <p>Browse work by category: extensions, renovations and new builds.</p>
       </header>
 
       <section className="catGrid">
@@ -37,7 +37,7 @@ export default function ProjectsLandingPage() {
             <div className="catHeroReal">
               <Image
                 src={coverFor(c.key)}
-                alt=""
+                alt={`${c.title} cover`}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="catHeroImg"

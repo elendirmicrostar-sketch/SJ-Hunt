@@ -1,17 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
-import { categoryCover } from "@/data/category-covers";
+import { coverFor } from "@/data/category-covers";
 
-// ✅ EDIT THESE (single source of truth)
-const TEL_NUMBER = "01234 567 890";
-const MOBILE_NUMBER = "07123 456 789";
-const EMAIL = "info@sjhuntbuilders.co.uk"; // change if needed
+const categories = [
+  {
+    key: "extensions" as const,
+    title: "Extensions",
+    desc: "Single and multi-storey extensions built to match your home.",
+    href: "/projects/extensions",
+  },
+  {
+    key: "renovations" as const,
+    title: "Renovations",
+    desc: "Refurbishments, reconfigurations and finish upgrades.",
+    href: "/projects/renovations",
+  },
+  {
+    key: "new-builds" as const,
+    title: "New Builds",
+    desc: "From groundworks to completion — new homes built properly.",
+    href: "/projects/new-builds",
+  },
+];
 
 export default function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="wrap hero">
+      <div className="wrap hero">
         <div className="hero-grid">
           <div className="panel hero-left">
             <div className="kicker">Established 1998 • Hampshire & Surrey • Local, reliable workmanship</div>
@@ -20,37 +36,27 @@ export default function Home() {
 
             <p className="lead">
               Established in <strong>1998</strong>, based near <strong>Sandhurst</strong> and covering{" "}
-              <strong>Crowthorne</strong>, <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas.
-              From home extensions to full new-builds, we deliver clear quotes, tidy sites and a finish you’ll be proud of.
+              <strong>Crowthorne</strong>, <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas. From home
+              extensions to full new-builds, we deliver clear quotes, tidy sites and a finish you’ll be proud of.
             </p>
 
             <div className="hero-actions">
-              <a className="btn primary" href="#contact">
+              <a className="btn" href="tel:01234567890">
+                Tel: 01234 567890
+              </a>
+              <a className="btn" href="tel:07123456789">
+                Mobile: 07123 456789
+              </a>
+              <a className="btn primary" href="#quote">
                 Get a Quote
               </a>
-
-              {/* ✅ Numbers shown on the buttons (not just “Tel/Mobile”) */}
-              <a className="btn" href={`tel:${TEL_NUMBER.replace(/\s+/g, "")}`}>
-                Tel: {TEL_NUMBER}
-              </a>
-              <a className="btn" href={`tel:${MOBILE_NUMBER.replace(/\s+/g, "")}`}>
-                Mobile: {MOBILE_NUMBER}
-              </a>
-            </div>
-
-            <div className="hero-badges">
-              <div className="badge">Clear written quotes</div>
-              <div className="badge">Quality workmanship</div>
-              <div className="badge">Respectful, tidy site</div>
-              <div className="badge">Local Hampshire/Surrey</div>
             </div>
           </div>
 
-          {/* HERO IMAGE (uses category cover so it always exists) */}
           <div className="panel hero-right">
             <div className="heroPhoto">
               <Image
-                src={categoryCover("renovations")}
+                src={coverFor("extensions")}
                 alt="Recent project"
                 fill
                 priority
@@ -60,122 +66,97 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* SERVICES */}
-      <section className="wrap">
-        <div className="section-head">
-          <div>
-            <h2>Services</h2>
-            <p className="sub">From planning to finishing — we manage the job properly.</p>
-          </div>
-        </div>
-
-        <div className="grid-3">
-          <Link className="card" href="/projects/extensions">
-            <h3>Extensions</h3>
-            <p>Single and multi-storey extensions built to match your home.</p>
-            <span className="miniCta">See extensions →</span>
-          </Link>
-
-          <Link className="card" href="/projects/renovations">
-            <h3>Renovations</h3>
-            <p>Refurbishments, reconfigurations and finish upgrades.</p>
-            <span className="miniCta">See renovations →</span>
-          </Link>
-
-          <Link className="card" href="/projects/new-builds">
-            <h3>New Builds</h3>
-            <p>From groundworks to completion — new homes built properly.</p>
-            <span className="miniCta">See new builds →</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* FEATURED PROJECTS */}
+      {/* FEATURED CATEGORIES */}
       <section>
         <div className="wrap">
           <div className="section-head">
             <div>
-              <h2>Featured projects</h2>
-              <p className="sub">A selection of recent work across Hampshire & Surrey.</p>
+              <h2>Featured work</h2>
+              <p className="sub">Browse recent projects by category.</p>
             </div>
-            <Link className="btn" href="/projects">
+            <a className="btn" href="/projects">
               See all projects
-            </Link>
+            </a>
           </div>
 
           <div className="grid-3">
-            <Link className="card" href="/projects/extensions">
-              <div className="featThumb">
-                <Image
-                  src={categoryCover("extensions")}
-                  alt="Extensions projects"
-                  fill
-                  className="featThumbImg"
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                />
-              </div>
-              <h3>Extensions</h3>
-              <p>Extra space built properly — seamless finish, tidy site.</p>
-            </Link>
-
-            <Link className="card" href="/projects/renovations">
-              <div className="featThumb">
-                <Image
-                  src={categoryCover("renovations")}
-                  alt="Renovations projects"
-                  fill
-                  className="featThumbImg"
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                />
-              </div>
-              <h3>Renovations</h3>
-              <p>Refurbs and upgrades that transform how your home feels.</p>
-            </Link>
-
-            <Link className="card" href="/projects/new-builds">
-              <div className="featThumb">
-                <Image
-                  src={categoryCover("new-builds")}
-                  alt="New builds projects"
-                  fill
-                  className="featThumbImg"
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                />
-              </div>
-              <h3>New Builds</h3>
-              <p>From groundwork to completion — built to last.</p>
-            </Link>
+            {categories.map((c) => (
+              <Link key={c.key} className="card" href={c.href}>
+                <div className="featThumb">
+                  <Image
+                    src={coverFor(c.key)}
+                    alt={`${c.title} projects`}
+                    fill
+                    className="featThumbImg"
+                    sizes="(max-width: 900px) 100vw, 33vw"
+                  />
+                </div>
+                <h3>{c.title}</h3>
+                <p>{c.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT (Get a Quote anchor target) */}
-      <section id="contact">
+      {/* SERVICES (simple, safe default — tweak later) */}
+      <section>
         <div className="wrap">
           <div className="section-head">
             <div>
-              <h2>Get a Quote</h2>
-              <p className="sub">Call or email — we’ll come back to you quickly.</p>
+              <h2>Services</h2>
+              <p className="sub">Clear quotes, tidy sites, quality finish.</p>
             </div>
           </div>
 
           <div className="grid-3">
-            <a className="card" href={`tel:${TEL_NUMBER.replace(/\s+/g, "")}`}>
+            <div className="card">
+              <h3>Extensions</h3>
+              <p>Single and double-storey extensions designed to blend with your home.</p>
+            </div>
+            <div className="card">
+              <h3>Renovations</h3>
+              <p>Refits, reconfigurations and finishing upgrades — done properly and cleanly.</p>
+            </div>
+            <div className="card">
+              <h3>New Builds</h3>
+              <p>From groundworks to completion — structured, reliable project delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* QUOTE / CONTACT */}
+      <section id="quote">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Get a Quote</h2>
+              <p className="sub">Call or message and we’ll come back to you quickly.</p>
+            </div>
+          </div>
+
+          <div className="grid-3">
+            <div className="card">
               <h3>Telephone</h3>
-              <p>{TEL_NUMBER}</p>
-            </a>
-
-            <a className="card" href={`tel:${MOBILE_NUMBER.replace(/\s+/g, "")}`}>
+              <p>
+                <a href="tel:01234567890">01234 567890</a>
+              </p>
+            </div>
+            <div className="card">
               <h3>Mobile</h3>
-              <p>{MOBILE_NUMBER}</p>
-            </a>
-
-            <a className="card" href={`mailto:${EMAIL}`}>
+              <p>
+                <a href="tel:07123456789">07123 456789</a>
+              </p>
+            </div>
+            <div className="card">
               <h3>Email</h3>
-              <p>{EMAIL}</p>
-            </a>
+              <p>
+                <a href="mailto:info@sjhunt.co.uk">info@sjhunt.co.uk</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
