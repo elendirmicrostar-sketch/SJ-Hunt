@@ -25,7 +25,20 @@ export const projects: Project[] = [
       "/projects/extensions/project-01/IMG_0490.JPG",
       "/projects/extensions/project-01/IMG_0493.JPG",
       "/projects/extensions/project-01/IMG_0494.JPG",
-      "/projects/extensions/project-01/IMG_0496.JPG"
+      "/projects/extensions/project-01/IMG_0496.JPG",
+      "/projects/extensions/project-01/IMG_0676.JPG",
+      "/projects/extensions/project-01/IMG_0677.JPG",
+      "/projects/extensions/project-01/IMG_0678.JPG",
+      "/projects/extensions/project-01/IMG_0690.JPG",
+      "/projects/extensions/project-01/IMG_0698.JPG",
+      "/projects/extensions/project-01/IMG_0699.JPG",
+      "/projects/extensions/project-01/IMG_0700.JPG",
+      "/projects/extensions/project-01/IMG_0708.JPG",
+      "/projects/extensions/project-01/IMG_0709.JPG",
+      "/projects/extensions/project-01/IMG_0711.JPG",
+      "/projects/extensions/project-01/IMG_0810.JPG",
+      "/projects/extensions/project-01/IMG_0814.JPG",
+      "/projects/extensions/project-01/IMG_0815.JPG"
     ]
   },
   {
@@ -34,18 +47,12 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-02/IMG_0676.JPG",
+    "cover": "/projects/extensions/project-02/IMG_0933.JPG",
     "images": [
-      "/projects/extensions/project-02/IMG_0676.JPG",
-      "/projects/extensions/project-02/IMG_0677.JPG",
-      "/projects/extensions/project-02/IMG_0678.JPG",
-      "/projects/extensions/project-02/IMG_0690.JPG",
-      "/projects/extensions/project-02/IMG_0698.JPG",
-      "/projects/extensions/project-02/IMG_0699.JPG",
-      "/projects/extensions/project-02/IMG_0700.JPG",
-      "/projects/extensions/project-02/IMG_0708.JPG",
-      "/projects/extensions/project-02/IMG_0709.JPG",
-      "/projects/extensions/project-02/IMG_0711.JPG"
+      "/projects/extensions/project-02/IMG_0933.JPG",
+      "/projects/extensions/project-02/IMG_0934.JPG",
+      "/projects/extensions/project-02/IMG_0952.JPG",
+      "/projects/extensions/project-02/IMG_0964.JPG"
     ]
   },
   {
@@ -54,11 +61,9 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-03/IMG_0810.JPG",
+    "cover": "/projects/extensions/project-03/IMG_1153.JPG",
     "images": [
-      "/projects/extensions/project-03/IMG_0810.JPG",
-      "/projects/extensions/project-03/IMG_0814.JPG",
-      "/projects/extensions/project-03/IMG_0815.JPG"
+      "/projects/extensions/project-03/IMG_1153.JPG"
     ]
   },
   {
@@ -67,12 +72,9 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-04/IMG_0933.JPG",
+    "cover": "/projects/extensions/project-04/IMG_1431.JPG",
     "images": [
-      "/projects/extensions/project-04/IMG_0933.JPG",
-      "/projects/extensions/project-04/IMG_0934.JPG",
-      "/projects/extensions/project-04/IMG_0952.JPG",
-      "/projects/extensions/project-04/IMG_0964.JPG"
+      "/projects/extensions/project-04/IMG_1431.JPG"
     ]
   },
   {
@@ -81,9 +83,13 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-05/IMG_1153.JPG",
+    "cover": "/projects/extensions/project-05/IMG_1661.JPG",
     "images": [
-      "/projects/extensions/project-05/IMG_1153.JPG"
+      "/projects/extensions/project-05/IMG_1661.JPG",
+      "/projects/extensions/project-05/IMG_1848.JPG",
+      "/projects/extensions/project-05/IMG_1849.JPG",
+      "/projects/extensions/project-05/IMG_1850.JPG",
+      "/projects/extensions/project-05/IMG_1883.JPG"
     ]
   },
   {
@@ -92,9 +98,9 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-06/IMG_1431.JPG",
+    "cover": "/projects/extensions/project-06/IMG_0192.jpg",
     "images": [
-      "/projects/extensions/project-06/IMG_1431.JPG"
+      "/projects/extensions/project-06/IMG_0192.jpg"
     ]
   },
   {
@@ -103,9 +109,9 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-07/IMG_1661.JPG",
+    "cover": "/projects/extensions/project-07/IMG_1515.PNG",
     "images": [
-      "/projects/extensions/project-07/IMG_1661.JPG"
+      "/projects/extensions/project-07/IMG_1515.PNG"
     ]
   },
   {
@@ -114,55 +120,19 @@ export const projects: Project[] = [
     "category": "extensions",
     "categoryLabel": "Extensions",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-08/IMG_1848.JPG",
+    "cover": "/projects/extensions/project-08/cover.webp",
     "images": [
-      "/projects/extensions/project-08/IMG_1848.JPG",
-      "/projects/extensions/project-08/IMG_1849.JPG",
-      "/projects/extensions/project-08/IMG_1850.JPG",
-      "/projects/extensions/project-08/IMG_1883.JPG"
-    ]
-  },
-  {
-    "slug": "extensions-project-09",
-    "title": "Project 09",
-    "category": "extensions",
-    "categoryLabel": "Extensions",
-    "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-09/IMG_0192.jpg",
-    "images": [
-      "/projects/extensions/project-09/IMG_0192.jpg"
-    ]
-  },
-  {
-    "slug": "extensions-project-10",
-    "title": "Project 10",
-    "category": "extensions",
-    "categoryLabel": "Extensions",
-    "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-10/IMG_1515.PNG",
-    "images": [
-      "/projects/extensions/project-10/IMG_1515.PNG"
-    ]
-  },
-  {
-    "slug": "extensions-project-11",
-    "title": "Project 11",
-    "category": "extensions",
-    "categoryLabel": "Extensions",
-    "location": "Hampshire & Surrey",
-    "cover": "/projects/extensions/project-11/cover.webp",
-    "images": [
-      "/projects/extensions/project-11/01.webp",
-      "/projects/extensions/project-11/02.webp",
-      "/projects/extensions/project-11/03.webp",
-      "/projects/extensions/project-11/04.webp",
-      "/projects/extensions/project-11/05.webp",
-      "/projects/extensions/project-11/06.webp",
-      "/projects/extensions/project-11/07.webp",
-      "/projects/extensions/project-11/08.webp",
-      "/projects/extensions/project-11/cover.webp",
-      "/projects/extensions/project-11/IMG_0010.JPG",
-      "/projects/extensions/project-11/IMG_0021.JPG"
+      "/projects/extensions/project-08/01.webp",
+      "/projects/extensions/project-08/02.webp",
+      "/projects/extensions/project-08/03.webp",
+      "/projects/extensions/project-08/04.webp",
+      "/projects/extensions/project-08/05.webp",
+      "/projects/extensions/project-08/06.webp",
+      "/projects/extensions/project-08/07.webp",
+      "/projects/extensions/project-08/08.webp",
+      "/projects/extensions/project-08/cover.webp",
+      "/projects/extensions/project-08/IMG_0010.JPG",
+      "/projects/extensions/project-08/IMG_0021.JPG"
     ]
   },
   {
@@ -171,8 +141,17 @@ export const projects: Project[] = [
     "category": "renovations",
     "categoryLabel": "Renovations",
     "location": "Hampshire & Surrey",
-    "cover": "/projects/renovations/project-01/IMG_1768.JPG",
+    "cover": "/projects/renovations/project-01/cover.webp",
     "images": [
+      "/projects/renovations/project-01/01.webp",
+      "/projects/renovations/project-01/02.webp",
+      "/projects/renovations/project-01/03.webp",
+      "/projects/renovations/project-01/04.webp",
+      "/projects/renovations/project-01/05.webp",
+      "/projects/renovations/project-01/06.webp",
+      "/projects/renovations/project-01/07.webp",
+      "/projects/renovations/project-01/08.webp",
+      "/projects/renovations/project-01/cover.webp",
       "/projects/renovations/project-01/IMG_1768.JPG",
       "/projects/renovations/project-01/IMG_1794.JPG"
     ]
@@ -198,25 +177,6 @@ export const projects: Project[] = [
       "/projects/renovations/project-02/11.webp",
       "/projects/renovations/project-02/12.webp",
       "/projects/renovations/project-02/cover.webp"
-    ]
-  },
-  {
-    "slug": "new-builds-project-01",
-    "title": "Project 01",
-    "category": "new-builds",
-    "categoryLabel": "New Builds",
-    "location": "Hampshire & Surrey",
-    "cover": "/projects/new-builds/project-01/cover.webp",
-    "images": [
-      "/projects/new-builds/project-01/01.webp",
-      "/projects/new-builds/project-01/02.webp",
-      "/projects/new-builds/project-01/03.webp",
-      "/projects/new-builds/project-01/04.webp",
-      "/projects/new-builds/project-01/05.webp",
-      "/projects/new-builds/project-01/06.webp",
-      "/projects/new-builds/project-01/07.webp",
-      "/projects/new-builds/project-01/08.webp",
-      "/projects/new-builds/project-01/cover.webp"
     ]
   }
 ] as const;
