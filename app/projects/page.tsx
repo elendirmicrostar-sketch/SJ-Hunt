@@ -1,14 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "@/data/projects";
-
-export const dynamic = "force-static";
-
-type CategoryKey = "extensions" | "renovations" | "new-builds";
-
-function coverFor(category: CategoryKey) {
-  return projects.find((p) => p.category === category)?.cover ?? "/brand/logo.png";
-}
+import { coverFor, type CategoryKey } from "@/data/category-covers";
 
 const categories: { key: CategoryKey; title: string; desc: string; href: string }[] = [
   {
@@ -36,27 +28,27 @@ export default function ProjectsLandingPage() {
     <main className="wrap pagePad">
       <header className="pageHead">
         <h1>Projects</h1>
-        <p>Browse work by category: extensions, renovations and new builds.</p>
+        <p>Browse work by category.</p>
       </header>
 
       <section className="catGrid">
-        {categories.map((cat) => (
-          <Link key={cat.key} href={cat.href} className="catCard">
+        {categories.map((c) => (
+          <Link key={c.key} href={c.href} className="catCard">
             <div className="catHeroReal">
               <Image
-                src={coverFor(cat.key)}
+                src={coverFor(c.key)}
                 alt=""
                 fill
-                sizes="(max-width: 900px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="catHeroImg"
                 priority
               />
             </div>
 
             <div className="catBody">
-              <h2 className="catTitle">{cat.title}</h2>
-              <p className="catDesc">{cat.desc}</p>
-              <span className="catCta">View {cat.title} →</span>
+              <h2 className="catTitle">{c.title}</h2>
+              <p className="catDesc">{c.desc}</p>
+              <span className="catCta">View {c.title} →</span>
             </div>
           </Link>
         ))}
