@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { categoryCover } from "@/data/category-covers";
+
+// ✅ EDIT THESE (single source of truth)
+const TEL_NUMBER = "01234 567 890";
+const MOBILE_NUMBER = "07123 456 789";
+const EMAIL = "info@sjhuntbuilders.co.uk"; // change if needed
 
 export default function Home() {
   return (
@@ -8,9 +14,7 @@ export default function Home() {
       <section className="wrap hero">
         <div className="hero-grid">
           <div className="panel hero-left">
-            <div className="kicker">
-              Established 1998 • Hampshire & Surrey • Local, reliable workmanship
-            </div>
+            <div className="kicker">Established 1998 • Hampshire & Surrey • Local, reliable workmanship</div>
 
             <h1>Building contractors for extensions, renovations and new-build homes.</h1>
 
@@ -21,32 +25,32 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <a className="btn primary" href="/#contact">
+              <a className="btn primary" href="#contact">
                 Get a Quote
               </a>
 
-              {/* Bring back these buttons */}
-              <a className="btn" href="tel:01252 510109">
-                Tel
+              {/* ✅ Numbers shown on the buttons (not just “Tel/Mobile”) */}
+              <a className="btn" href={`tel:${TEL_NUMBER.replace(/\s+/g, "")}`}>
+                Tel: {TEL_NUMBER}
               </a>
-              <a className="btn" href="tel:07712590713">
-                Mobile
+              <a className="btn" href={`tel:${MOBILE_NUMBER.replace(/\s+/g, "")}`}>
+                Mobile: {MOBILE_NUMBER}
               </a>
             </div>
 
-            <div className="trustbar" role="list">
-              <div className="pill" role="listitem">Clear written quotes</div>
-              <div className="pill" role="listitem">Quality workmanship</div>
-              <div className="pill" role="listitem">Respectful, tidy site</div>
-              <div className="pill" role="listitem">Local Hampshire/Surrey</div>
+            <div className="hero-badges">
+              <div className="badge">Clear written quotes</div>
+              <div className="badge">Quality workmanship</div>
+              <div className="badge">Respectful, tidy site</div>
+              <div className="badge">Local Hampshire/Surrey</div>
             </div>
           </div>
 
-          <div className="panel hero-right" aria-label="Project photo">
-            {/* Use a known-good image path you have in git (adjust if needed) */}
+          {/* HERO IMAGE (uses category cover so it always exists) */}
+          <div className="panel hero-right">
             <div className="heroPhoto">
               <Image
-                src="/projects/extensions/project-01/IMG_0490.JPG"
+                src={categoryCover("renovations")}
                 alt="Recent project"
                 fill
                 priority
@@ -59,38 +63,36 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section>
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <h2>Services</h2>
-              <p className="sub">From planning to finishing — we manage the job properly.</p>
-            </div>
+      <section className="wrap">
+        <div className="section-head">
+          <div>
+            <h2>Services</h2>
+            <p className="sub">From planning to finishing — we manage the job properly.</p>
           </div>
+        </div>
 
-          <div className="grid-3">
-            <div className="card">
-              <h3>Extensions</h3>
-              <p>Single and multi-storey extensions built to match your home.</p>
-              <Link className="btn" href="/projects/extensions">See extensions</Link>
-            </div>
+        <div className="grid-3">
+          <Link className="card" href="/projects/extensions">
+            <h3>Extensions</h3>
+            <p>Single and multi-storey extensions built to match your home.</p>
+            <span className="miniCta">See extensions →</span>
+          </Link>
 
-            <div className="card">
-              <h3>Renovations</h3>
-              <p>Refurbishments, reconfigurations and finish upgrades.</p>
-              <Link className="btn" href="/projects/renovations">See renovations</Link>
-            </div>
+          <Link className="card" href="/projects/renovations">
+            <h3>Renovations</h3>
+            <p>Refurbishments, reconfigurations and finish upgrades.</p>
+            <span className="miniCta">See renovations →</span>
+          </Link>
 
-            <div className="card">
-              <h3>New Builds</h3>
-              <p>From groundworks to completion — new homes built properly.</p>
-              <Link className="btn" href="/projects/new-builds">See new builds</Link>
-            </div>
-          </div>
+          <Link className="card" href="/projects/new-builds">
+            <h3>New Builds</h3>
+            <p>From groundworks to completion — new homes built properly.</p>
+            <span className="miniCta">See new builds →</span>
+          </Link>
         </div>
       </section>
 
-      {/* FEATURED CATEGORIES */}
+      {/* FEATURED PROJECTS */}
       <section>
         <div className="wrap">
           <div className="section-head">
@@ -107,50 +109,76 @@ export default function Home() {
             <Link className="card" href="/projects/extensions">
               <div className="featThumb">
                 <Image
-                  src="/projects/extensions/project-01/IMG_0490.JPG"
-                  alt="Extensions project"
+                  src={categoryCover("extensions")}
+                  alt="Extensions projects"
                   fill
                   className="featThumbImg"
                   sizes="(max-width: 900px) 100vw, 33vw"
                 />
               </div>
               <h3>Extensions</h3>
-              <p>Recent extension work</p>
+              <p>Extra space built properly — seamless finish, tidy site.</p>
             </Link>
 
             <Link className="card" href="/projects/renovations">
               <div className="featThumb">
                 <Image
-                  src="/projects/renovations/project-01/IMG_1768.JPG"
-                  alt="Renovation project"
+                  src={categoryCover("renovations")}
+                  alt="Renovations projects"
                   fill
                   className="featThumbImg"
                   sizes="(max-width: 900px) 100vw, 33vw"
                 />
               </div>
               <h3>Renovations</h3>
-              <p>Recent renovation work</p>
+              <p>Refurbs and upgrades that transform how your home feels.</p>
             </Link>
 
             <Link className="card" href="/projects/new-builds">
               <div className="featThumb">
                 <Image
-                  src="/projects/new-builds/project-01/01.webp"
-                  alt="New build project"
+                  src={categoryCover("new-builds")}
+                  alt="New builds projects"
                   fill
                   className="featThumbImg"
                   sizes="(max-width: 900px) 100vw, 33vw"
                 />
               </div>
               <h3>New Builds</h3>
-              <p>Recent new build work</p>
+              <p>From groundwork to completion — built to last.</p>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CONTACT ANCHOR (so /#contact works even if your contact form is elsewhere) */}
-      <div id="contact" />
+      {/* CONTACT (Get a Quote anchor target) */}
+      <section id="contact">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Get a Quote</h2>
+              <p className="sub">Call or email — we’ll come back to you quickly.</p>
+            </div>
+          </div>
+
+          <div className="grid-3">
+            <a className="card" href={`tel:${TEL_NUMBER.replace(/\s+/g, "")}`}>
+              <h3>Telephone</h3>
+              <p>{TEL_NUMBER}</p>
+            </a>
+
+            <a className="card" href={`tel:${MOBILE_NUMBER.replace(/\s+/g, "")}`}>
+              <h3>Mobile</h3>
+              <p>{MOBILE_NUMBER}</p>
+            </a>
+
+            <a className="card" href={`mailto:${EMAIL}`}>
+              <h3>Email</h3>
+              <p>{EMAIL}</p>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
