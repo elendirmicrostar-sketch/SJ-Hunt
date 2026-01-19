@@ -19,24 +19,18 @@ function isImage(p: string) {
   return /\.(jpg|jpeg|png|webp)$/i.test(p);
 }
 
-function toPublicUrl(absPath: string) {
-  // turn absolute file path into /projects/... URL
-  const rel = path.relative(path.join(process.cwd(), "public"), absPath);
-  return "/" + rel.split(path.sep).join("/");
-}
-
-/** Returns ALL images in a category (across all project folders) */
 export function getCategoryImages(category: CategoryKey): string[] {
   const dir = path.join(ROOT, category);
   if (!fs.existsSync(dir)) return [];
 
-  return walk(dir)
-    .filter(isImage)
-    .map(toPublicUrl)
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  const files = walk(dir).filter(isImage);
+
+  // Convert absolute disk paths -> public URLs (/projects/...)
+  return files
+    .map((abs) => "/" + path.relative(path.join(process.cwd(), "public"), abs).split(path.sep).join("/"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
 }
 
-/** Best "cover" image for a category (first image found, stable sorted) */
 export function categoryCover(category: CategoryKey): string {
   const imgs = getCategoryImages(category);
   return imgs[0] ?? "/brand/logo.png";

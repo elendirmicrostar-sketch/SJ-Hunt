@@ -4,31 +4,31 @@ import { categoryCover } from "@/lib/category-images";
 
 const categories = [
   {
-    key: "extensions",
+    key: "extensions" as const,
     title: "Extensions",
     desc: "Single and multi-storey extensions built to match your home.",
     href: "/projects/extensions",
   },
   {
-    key: "renovations",
+    key: "renovations" as const,
     title: "Renovations",
     desc: "Refurbishments, reconfigurations and finish upgrades.",
     href: "/projects/renovations",
   },
   {
-    key: "new-builds",
+    key: "new-builds" as const,
     title: "New Builds",
     desc: "From groundworks to completion — new homes built properly.",
     href: "/projects/new-builds",
   },
-] as const;
+];
 
 export default function ProjectsLandingPage() {
   return (
     <main className="wrap pagePad">
       <header className="pageHead">
         <h1>Projects</h1>
-        <p>Browse work by category.</p>
+        <p>Browse work by category: extensions, renovations and new builds.</p>
       </header>
 
       <section className="catGrid">
@@ -36,13 +36,12 @@ export default function ProjectsLandingPage() {
           <Link key={c.key} href={c.href} className="catCard">
             <div className="catHeroReal">
               <Image
-                src={categoryCover(c.key as any)}
+                src={categoryCover(c.key)}
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="catHeroImg"
                 priority
-                unoptimized
               />
             </div>
 
