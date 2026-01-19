@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { projects } from "@/data/projects";
+
+function heroFor(category: "extensions" | "renovations" | "new-builds") {
+  const first = projects.find((p) => p.category === category);
+  return first?.cover ?? "/brand/logo.png"; // fallback
+}
+
 
 export default function Home() {
   return (
