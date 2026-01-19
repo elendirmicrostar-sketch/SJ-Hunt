@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import { getCategoryImages } from "@/lib/category-images";
+
 
 function heroFor(category: "extensions" | "renovations" | "new-builds") {
   const first = projects.find((p) => p.category === category);
