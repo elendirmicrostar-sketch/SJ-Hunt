@@ -3,9 +3,24 @@ import Image from "next/image";
 import { categoryCover } from "@/lib/category-images";
 
 const categories = [
-  { key: "extensions", title: "Extensions", desc: "Single and multi-storey extensions built to match your home.", href: "/projects/extensions" },
-  { key: "renovations", title: "Renovations", desc: "Refurbishments, reconfigurations and finish upgrades.", href: "/projects/renovations" },
-  { key: "new-builds", title: "New Builds", desc: "From groundworks to completion — new homes built properly.", href: "/projects/new-builds" },
+  {
+    key: "extensions",
+    title: "Extensions",
+    desc: "Single and multi-storey extensions built to match your home.",
+    href: "/projects/extensions",
+  },
+  {
+    key: "renovations",
+    title: "Renovations",
+    desc: "Refurbishments, reconfigurations and finish upgrades.",
+    href: "/projects/renovations",
+  },
+  {
+    key: "new-builds",
+    title: "New Builds",
+    desc: "From groundworks to completion — new homes built properly.",
+    href: "/projects/new-builds",
+  },
 ] as const;
 
 export default function ProjectsLandingPage() {
@@ -21,12 +36,13 @@ export default function ProjectsLandingPage() {
           <Link key={c.key} href={c.href} className="catCard">
             <div className="catHeroReal">
               <Image
-                src={categoryCover(c.key)}
+                src={categoryCover(c.key as any)}
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="catHeroImg"
                 priority
+                unoptimized
               />
             </div>
 
