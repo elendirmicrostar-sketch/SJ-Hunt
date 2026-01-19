@@ -7,9 +7,6 @@ import GalleryGrid from "@/components/GalleryGrid";
 const CATEGORIES = ["extensions", "renovations", "new-builds"] as const;
 type Category = (typeof CATEGORIES)[number];
 
-export function generateStaticParams() {
-  return CATEGORIES.map((category) => ({ category }));
-}
 
 export default function ExtensionsPage() {
   const list = projects.filter((p) => p.category === "extensions");
@@ -17,7 +14,7 @@ export default function ExtensionsPage() {
   return (
     <main className="wrap">
       <h1>Extensions</h1>
-      <GalleryGrid projects={list} />
+            <GalleryGrid projects={list} showFilters={false} />
     </main>
   );
 }

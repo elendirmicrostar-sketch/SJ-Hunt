@@ -7,17 +7,13 @@ import GalleryGrid from "@/components/GalleryGrid";
 const CATEGORIES = ["extensions", "renovations", "new-builds"] as const;
 type Category = (typeof CATEGORIES)[number];
 
-export function generateStaticParams() {
-  return CATEGORIES.map((category) => ({ category }));
-}
-
 export default function NewBuildsPage() {
   const list = projects.filter((p) => p.category === "new-builds");
 
   return (
     <main className="wrap">
       <h1>New Builds</h1>
-      <GalleryGrid projects={list} />
+            <GalleryGrid projects={list} showFilters={false} />
     </main>
   );
 }
