@@ -178,5 +178,24 @@ export const projects: Project[] = [
       "/projects/renovations/project-02/12.webp",
       "/projects/renovations/project-02/cover.webp"
     ]
+  },
+  {
+    "slug": "new-builds-project-01",
+    "title": "Project 01",
+    "category": "new-builds",
+    "categoryLabel": "New Builds",
+    "location": "Hampshire & Surrey",
+    "cover": "/projects/new-builds/project-01/cover.webp",
+    "images": [
+      "/projects/new-builds/project-01/01.webp",
+      "/projects/new-builds/project-01/02.webp",
+      "/projects/new-builds/project-01/03.webp",
+      "/projects/new-builds/project-01/04.webp",
+      "/projects/new-builds/project-01/05.webp",
+      "/projects/new-builds/project-01/06.webp",
+      "/projects/new-builds/project-01/07.webp",
+      "/projects/new-builds/project-01/08.webp",
+      "/projects/new-builds/project-01/cover.webp"
+    ]
   }
 ] as const;
