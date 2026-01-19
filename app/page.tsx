@@ -87,55 +87,53 @@ export default function Home() {
             <a className="btn" href="/projects">See all projects</a>
           </div>
 
-          <div className="grid-3">
-          
-              <Link className="card" href="/projects/extensions">
-  <div className="featThumb">
-    <Image
-      src="/projects/extensions/project-05/cover.webp"
-      alt="Renovation project"
-      fill
-      className="featThumbImg"
-      sizes="(max-width: 900px) 100vw, 33vw"
-    />
-  </div>
-  <h3>Extensions</h3>
-  <p></p>
-</Link>
+      <div className="grid-3">
+  <Link className="card" href="/projects?category=extensions">
+    <div className="featThumb">
+      <Image
+        src={heroFor("extensions")}
+        alt="Extensions projects"
+        fill
+        className="featThumbImg"
+        sizes="(max-width: 900px) 100vw, 33vw"
+        unoptimized
+      />
+    </div>
+    <h3>Extensions</h3>
+    <p></p>
+  </Link>
 
-            
-              <Link className="card" href="/projects/renovations">
-  <div className="featThumb">
-    <Image
-      src="/projects/renovations/project-13/cover.webp"
-      alt="Renovation project"
-      fill
-      className="featThumbImg"
-      sizes="(max-width: 900px) 100vw, 33vw"
-    />
-  </div>
-  <h3>Renovation</h3>
-  <p></p>
-</Link>
+  <Link className="card" href="/projects?category=renovations">
+    <div className="featThumb">
+      <Image
+        src={heroFor("renovations")}
+        alt="Renovations projects"
+        fill
+        className="featThumbImg"
+        sizes="(max-width: 900px) 100vw, 33vw"
+        unoptimized
+      />
+    </div>
+    <h3>Renovations</h3>
+    <p></p>
+  </Link>
 
-          
-          
-             <Link className="card" href="/projects/new-builds">
-  <div className="featThumb">
-    <Image
-      src="/projects/new-builds/project-01/cover.webp"
-      alt="New Build Project"
-      fill
-      className="featThumbImg"
-      sizes="(max-width: 900px) 100vw, 33vw"
-    />
-  </div>
-  <h3>New Build Projects</h3>
-  <p></p>
-</Link>
+  <Link className="card" href="/projects?category=new-builds">
+    <div className="featThumb">
+      <Image
+        src={heroFor("new-builds")}
+        alt="New builds projects"
+        fill
+        className="featThumbImg"
+        sizes="(max-width: 900px) 100vw, 33vw"
+        unoptimized
+      />
+    </div>
+    <h3>New Builds</h3>
+    <p></p>
+  </Link>
+</div>
 
-          
-          </div>
         </div>
       </section>
 
