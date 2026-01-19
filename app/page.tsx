@@ -2,41 +2,72 @@ import Link from "next/link";
 import Image from "next/image";
 import { categoryCover } from "@/lib/category-images";
 
-const categories = [
-  { key: "extensions", title: "Extensions", desc: "Single and multi-storey extensions built to match your home.", href: "/projects/extensions" },
-  { key: "renovations", title: "Renovations", desc: "Refurbishments, reconfigurations and finish upgrades.", href: "/projects/renovations" },
-  { key: "new-builds", title: "New Builds", desc: "From groundworks to completion — new homes built properly.", href: "/projects/new-builds" },
-] as const;
-
-export default function ProjectsLandingPage() {
+export default function Home() {
   return (
-    <main className="wrap pagePad">
-      <header className="pageHead">
-        <h1>Projects</h1>
-        <p>Browse work by category.</p>
-      </header>
+    <main>
+      <div className="wrap hero">
+        <div className="hero-grid">
+          <div className="panel hero-left">
+            <div className="kicker">Established 1998 • Hampshire & Surrey • Local, reliable workmanship</div>
+            <h1>Building contractors for extensions, renovations and new-build homes.</h1>
+            <p className="lead">
+              Established in <strong>1998</strong>, based near <strong>Sandhurst</strong> and covering <strong>Crowthorne</strong>,{" "}
+              <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas.
+            </p>
+            <div className="hero-actions">
+              <a className="btn primary" href="/#contact">Request a Quote</a>
+              <Link className="btn" href="/projects">View Recent Work</Link>
+            </div>
+          </div>
 
-      <section className="catGrid">
-        {categories.map((c) => (
-          <Link key={c.key} href={c.href} className="catCard">
-            <div className="catHeroReal">
+          <div className="panel hero-right" aria-label="Project photo">
+            <div className="heroPhoto">
               <Image
-                src={categoryCover(c.key)}
-                alt=""
+                src={categoryCover("renovations")}
+                alt="Recent project"
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="catHeroImg"
                 priority
+                className="heroPhotoImg"
+                sizes="(max-width: 900px) 100vw, 45vw"
               />
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div className="catBody">
-              <h2 className="catTitle">{c.title}</h2>
-              <p className="catDesc">{c.desc}</p>
-              <span className="catCta">View {c.title} →</span>
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Featured work</h2>
+              <p className="sub">Browse by category.</p>
             </div>
-          </Link>
-        ))}
+            <Link className="btn" href="/projects">See all projects</Link>
+          </div>
+
+          <div className="grid-3">
+            <Link className="card" href="/projects/extensions">
+              <div className="featThumb">
+                <Image src={categoryCover("extensions")} alt="Extensions projects" fill className="featThumbImg" sizes="(max-width: 900px) 100vw, 33vw" />
+              </div>
+              <h3>Extensions</h3>
+            </Link>
+
+            <Link className="card" href="/projects/renovations">
+              <div className="featThumb">
+                <Image src={categoryCover("renovations")} alt="Renovations projects" fill className="featThumbImg" sizes="(max-width: 900px) 100vw, 33vw" />
+              </div>
+              <h3>Renovations</h3>
+            </Link>
+
+            <Link className="card" href="/projects/new-builds">
+              <div className="featThumb">
+                <Image src={categoryCover("new-builds")} alt="New build projects" fill className="featThumbImg" sizes="(max-width: 900px) 100vw, 33vw" />
+              </div>
+              <h3>New Builds</h3>
+            </Link>
+          </div>
+        </div>
       </section>
     </main>
   );

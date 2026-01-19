@@ -1,42 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "@/data/projects";
-import { getCategoryImages } from "@/lib/category-images";
-
-
-function heroFor(category: "extensions" | "renovations" | "new-builds") {
-  const first = projects.find((p) => p.category === category);
-  return first?.cover ?? "/brand/logo.png"; // fallback
-}
+import { categoryCover } from "@/lib/category-images";
 
 const categories = [
-  {
-    key: "extensions" as const,
-    title: "Extensions",
-    desc: "Single and multi-storey extensions built to match your home.",
-    href: "/projects/extensions",
-  },
-  {
-    key: "renovations" as const,
-    title: "Renovations",
-    desc: "Refurbishments, reconfigurations and finish upgrades.",
-    href: "/projects/renovations",
-  },
-  {
-    key: "new-builds" as const,
-    title: "New Builds",
-    desc: "From groundworks to completion — new homes built properly.",
-    href: "/projects/new-builds",
-  },
-];
-
+  { key: "extensions", title: "Extensions", desc: "Single and multi-storey extensions built to match your home.", href: "/projects/extensions" },
+  { key: "renovations", title: "Renovations", desc: "Refurbishments, reconfigurations and finish upgrades.", href: "/projects/renovations" },
+  { key: "new-builds", title: "New Builds", desc: "From groundworks to completion — new homes built properly.", href: "/projects/new-builds" },
+] as const;
 
 export default function ProjectsLandingPage() {
   return (
     <main className="wrap pagePad">
       <header className="pageHead">
         <h1>Projects</h1>
-        <p>Browse work by category: extensions, renovations and new builds.</p>
+        <p>Browse work by category.</p>
       </header>
 
       <section className="catGrid">
@@ -44,7 +21,7 @@ export default function ProjectsLandingPage() {
           <Link key={c.key} href={c.href} className="catCard">
             <div className="catHeroReal">
               <Image
-                src={heroFor(c.key)}
+                src={categoryCover(c.key)}
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
