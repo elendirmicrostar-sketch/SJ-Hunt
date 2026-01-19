@@ -930,4 +930,15 @@ header .navHeader{
   object-fit: contain;
   background: #f4f4f5; /* optional: stops black gaps looking weird */
 }
+.heroPhoto{
+  position: relative;
+  width: 100%;
+  min-height: 420px; /* important */
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.heroPhotoImg{
+  object-fit: cover; /* or contain if you prefer */
+}
 

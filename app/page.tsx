@@ -36,10 +36,10 @@ export default function Home() {
 
           <div className="panel hero-right" aria-label="Project photo">
             
-            <div className="heroPhoto">
+           <div className="heroPhoto">
   <Image
-    src="/projects/renovations/project-13/cover.webp"
-    alt="Recent renovation project"
+    src={heroFor("extensions")}
+    alt="Recent project"
     fill
     priority
     className="heroPhotoImg"
