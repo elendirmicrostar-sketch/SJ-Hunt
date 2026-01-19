@@ -898,3 +898,36 @@ header .navHeader{
     justify-self: center;
   }
 }
+/* any wrapper that contains <Image fill /> */
+.featThumb,
+.cardThumb,
+.lbThumbImgWrap,
+.lbImageWrap {
+  position: relative;
+  width: 100%;
+}
+
+/* give the card/thumbnail a visible box */
+.featThumb,
+.cardThumb {
+  aspect-ratio: 4 / 3;  /* or 16/9 */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.thumbImg {
+  object-fit: cover;
+}
+.projectCover{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* change to 16/9 if you prefer */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.projectCoverImg{
+  object-fit: contain;
+  background: #f4f4f5; /* optional: stops black gaps looking weird */
+}
+

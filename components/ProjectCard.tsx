@@ -4,7 +4,7 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-   <Link href={`/projects/${project.slug}`} className="projectCard">
+    <Link href={`/projects/${project.slug}`} className="projectCard">
       <div className="projectCover">
         <Image
           src={project.cover}
@@ -12,6 +12,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="projectCoverImg"
+          unoptimized
         />
       </div>
 
