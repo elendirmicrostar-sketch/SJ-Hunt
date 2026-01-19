@@ -32,6 +32,7 @@ function isMedia(p){
   return /\.(jpg|jpeg|png|webp)$/i.test(p);
 }
 
+
 async function getTaken(p){
   try{
     const exif = await exifr.parse(p, { tiff: true, exif: true, xmp: true, icc: false, iptc: false });
