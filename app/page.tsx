@@ -68,6 +68,33 @@ export default function Home() {
         </div>
       </div>
 
+  {/* SERVICES (simple, safe default — tweak later) */}
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>Services</h2>
+              <p className="sub">Clear quotes, tidy sites, quality finish.</p>
+            </div>
+          </div>
+
+          <div className="grid-3">
+            <div className="card">
+              <h3>Extensions</h3>
+              <p>Single and double-storey extensions designed to blend with your home.</p>
+            </div>
+            <div className="card">
+              <h3>Renovations</h3>
+              <p>Refits, reconfigurations and finishing upgrades — done properly and cleanly.</p>
+            </div>
+            <div className="card">
+              <h3>New Builds</h3>
+              <p>From groundworks to completion — structured, reliable project delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED CATEGORIES */}
       <section>
         <div className="wrap">
@@ -97,33 +124,6 @@ export default function Home() {
                 <p>{c.desc}</p>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES (simple, safe default — tweak later) */}
-      <section>
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <h2>Services</h2>
-              <p className="sub">Clear quotes, tidy sites, quality finish.</p>
-            </div>
-          </div>
-
-          <div className="grid-3">
-            <div className="card">
-              <h3>Extensions</h3>
-              <p>Single and double-storey extensions designed to blend with your home.</p>
-            </div>
-            <div className="card">
-              <h3>Renovations</h3>
-              <p>Refits, reconfigurations and finishing upgrades — done properly and cleanly.</p>
-            </div>
-            <div className="card">
-              <h3>New Builds</h3>
-              <p>From groundworks to completion — structured, reliable project delivery.</p>
-            </div>
           </div>
         </div>
       </section>

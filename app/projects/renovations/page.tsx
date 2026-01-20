@@ -1,5 +1,5 @@
 import CategoryGallery from "@/components/CategoryGallery";
-import { getCategoryImages } from "@/data/category-covers";
+import { getCategoryImages } from "@/data/category-images";
 
 export default function RenovationsPage() {
   const images = getCategoryImages("renovations");
