@@ -35,7 +35,7 @@ export default function Home() {
             <h1>Building contractors for extensions, renovations and new-build homes.</h1>
 
             <p className="lead">
-              Established in <strong>1998</strong>, based near <strong>Sandhurst</strong> and covering{" "}
+              Established in <strong>1998</strong>, based near <strong>Fleet</strong> and covering{" "}
               <strong>Crowthorne</strong>, <strong>Camberley</strong>, <strong>Farnborough</strong> and surrounding areas. From home
               extensions to full new-builds, we deliver clear quotes, tidy sites and a finish you’ll be proud of.
             </p>
@@ -149,12 +149,6 @@ export default function Home() {
               <h3>Mobile</h3>
               <p>
                 <a href="tel:07123456789">07123 456789</a>
-              </p>
-            </div>
-            <div className="card">
-              <h3>Email</h3>
-              <p>
-                <a href="mailto:info@sjhunt.co.uk">info@sjhunt.co.uk</a>
               </p>
             </div>
           </div>
