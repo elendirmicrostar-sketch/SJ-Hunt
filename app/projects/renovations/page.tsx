@@ -1,9 +1,12 @@
-import { getCategoryImages } from "@/data/category-images";
 import CategoryGallery from "@/components/CategoryGallery";
+import { projects } from "@/data/projects";
 
 export const dynamic = "force-static";
 
 export default function RenovationsPage() {
-  const images = getCategoryImages("renovations");
+  const images = projects
+    .filter((p) => p.category === "renovations")
+    .flatMap((p) => p.images);
+
   return <CategoryGallery title="Renovations" images={images} />;
 }
