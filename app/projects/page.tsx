@@ -23,6 +23,9 @@ const categories = [
   },
 ];
 
+export const dynamic = "force-static";
+
+
 export default function ProjectsLandingPage() {
   return (
     <main className="wrap pagePad">
