@@ -125,32 +125,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUOTE / CONTACT */}
-      <section id="quote">
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <h2>Get a Quote</h2>
-              <p className="sub">Call or message and we’ll come back to you quickly.</p>
-            </div>
-          </div>
+    {/* QUOTE / CONTACT */}
+<section id="contact">
+  <div className="wrap">
+    <div className="section-head">
+      <div>
+        <h2>Get a Quote</h2>
+        <p className="sub">Call or message and we’ll come back to you quickly.</p>
+      </div>
+    </div>
 
-          <div className="grid-3">
-            <div className="card">
-              <h3>Telephone</h3>
-              <p>
-                <a href="tel:01234567890">01234 567890</a>
-              </p>
-            </div>
-            <div className="card">
-              <h3>Mobile</h3>
-              <p>
-                <a href="tel:07123456789">07123 456789</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="grid-3">
+      <div className="card contactMobile">
+        <h3>Mobile</h3>
+        <a href="tel:07712590713">07712 590 713</a>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
   );
 }

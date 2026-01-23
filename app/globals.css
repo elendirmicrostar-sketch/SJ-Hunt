@@ -1153,3 +1153,22 @@ header .navHeader{
 .callBtn:hover {
   background: #b71c1c;
 }
+/* Contact mobile card */
+.contactMobile {
+  background: #c62828; /* strong red */
+  color: #fff;
+  max-width: 320px; /* slightly narrower */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contactMobile h3 {
+  color: #fff;
+}
+
+.contactMobile a {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
