@@ -136,10 +136,10 @@ export default function Home() {
     </div>
 
     <div className="grid-3">
-     <div className="card mobileCard">
+     <div className="mobileCard">
   <span className="mobileLabel">Mobile</span>
-  <a href="tel:07712590713" className="mobileNumber">
-    07712&nbsp;590&nbsp;713
+  <a className="mobileNumber" href="tel:07712590713">
+    07712 590 713
   </a>
 </div>
     </div>

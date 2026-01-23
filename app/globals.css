@@ -1203,3 +1203,46 @@ header .navHeader{
 .mobileNumber:hover {
   text-decoration: underline;
 }
+/* MOBILE CONTACT CARD */
+
+.mobileCard {
+  background: #c1121f;
+  color: #fff;
+
+  display: inline-flex;          /* keep it one line */
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin-top: 12px;
+}
+
+.mobileLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.mobileNumber {
+  font-size: 0.9rem;            /* 👈 smaller number */
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.mobileNumber:hover {
+  text-decoration: underline;
+}
+
+/* Make sure contact section is left aligned */
+#contact .grid-3 {
+  justify-items: start;
+}
