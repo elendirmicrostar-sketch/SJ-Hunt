@@ -1172,3 +1172,34 @@ header .navHeader{
   font-weight: 600;
   text-decoration: none;
 }
+.mobileCard {
+  background: #c1121f; /* red */
+  color: #fff;
+  max-width: 420px; /* makes card less wide */
+  margin: 0 auto;
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 14px;
+}
+
+.mobileLabel {
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.mobileNumber {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mobileNumber:hover {
+  text-decoration: underline;
+}
