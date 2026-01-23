@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <div className="navHeader">
       <div className="navSide" aria-hidden="true"></div>
 
-      <a className="brand brandCenter" href="/" aria-label="Home">
+      <a className="brand brandCenter" href="https://www.sjhuntbuildingcontractors.co.uk" aria-label="Home">
         <Image
           src="/brand/logo.png"
           alt="S J Hunt Building Contractors"
@@ -28,9 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </a>
 
-      <div className="navSide navRight">
-        <a className="btn primary" href="/#contact">Get a Quote</a>
-      </div>
+     <div className="navSide navRight">
+  <a className="btn primary callBtn" href="/#contact">
+    Get a Quote
+  </a>
+</div>
     </div>
   </div>
 </header>

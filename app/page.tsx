@@ -41,11 +41,8 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <a className="btn" href="tel:01234567890">
-                Tel: 01234 567890
-              </a>
-              <a className="btn" href="tel:07123456789">
-                Mobile: 07123 456789
+              <a className="btn" href="tel:07712590713">
+                Mobile: 07712 590 713
               </a>
               <a className="btn primary" href="#quote">
                 Get a Quote

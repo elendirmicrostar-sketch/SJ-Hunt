@@ -1142,3 +1142,14 @@ header .navHeader{
   transform: none !important;
   margin: 0 !important;
 }
+.callBtn {
+  background: #c62828; /* strong red */
+  color: #fff;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 600;
+}
+
+.callBtn:hover {
+  background: #b71c1c;
+}

@@ -17,9 +17,23 @@ export default function CategoryGallery({
   return (
     <main className="wrap pagePad">
       <header className="pageHead">
-        <h1>{title}</h1>
-        <p>{images.length} photos</p>
-      </header>
+  <a
+    href="/projects"
+    style={{
+      display: "inline-block",
+      marginBottom: 12,
+      fontSize: 14,
+      fontWeight: 500,
+      color: "#555",
+      textDecoration: "none",
+    }}
+  >
+    ← Back to projects
+  </a>
+
+  <h1>{title}</h1>
+  <p>{images.length} photos</p>
+</header>
 
       {/* Inline layout so CSS can't hide it */}
       <div
